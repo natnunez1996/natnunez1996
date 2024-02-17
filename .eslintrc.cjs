@@ -29,5 +29,10 @@ module.exports = {
         'react'
     ],
     rules: {
-    }
+        'react/react-in-jsx-scope': 0,
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/no-floating-promises': 'off',
+        '@typescript-eslint/no-misused-promises': 'off',
+        'no-unused-vars': 'off',
+    },
 }
