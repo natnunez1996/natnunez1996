@@ -4,6 +4,7 @@ import './home.scss'
 import { Button } from '@/shared'
 import { useNavigate } from 'react-router-dom'
 import { FadeContext } from '@/App'
+import fadeAnimation from '@/utils'
 
 export default function Home(): React.JSX.Element {
     const navigate = useNavigate();
@@ -11,10 +12,7 @@ export default function Home(): React.JSX.Element {
     const [fade, setFade]: [boolean, React.Dispatch<React.SetStateAction<boolean>>] = useContext(FadeContext)
 
     const handleClick = (location: string): void => {
-        setFade(true);
-        setTimeout(() => {
-            navigate(location)
-        }, 1200)
+        fadeAnimation(setFade, navigate, location)
     }
 
 
