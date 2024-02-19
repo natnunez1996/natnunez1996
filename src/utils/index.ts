@@ -1,0 +1,1 @@
+export { fadeAnimation as default } from '@/utils/fadeAnimation'
