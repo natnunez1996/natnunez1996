@@ -1,0 +1,40 @@
+@import "@/app.scss";
+
+.home {
+  width: 100%;
+  height: calc(100vh - 2rem);
+  top: 1rem;
+  position: relative;
+  .aboutSection {
+    @include fade(false);
+    margin: 1rem;
+    padding: 1rem;
+    background-color: $bg-secondary;
+    display: flex;
+    justify-content: space-around;
+    img {
+      height: 400px;
+      width: 350px;
+      border-radius: 50%;
+    }
+    div {
+      width: 50%;
+    }
+  }
+  .aboutSectionfade {
+    @include fade(true);
+    margin: 1rem;
+    padding: 1rem;
+    background-color: $bg-secondary;
+    display: flex;
+    justify-content: space-around;
+    img {
+      height: 400px;
+      width: 350px;
+      border-radius: 50%;
+    }
+    div {
+      width: 50%;
+    }
+  }
+}
