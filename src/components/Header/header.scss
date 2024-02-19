@@ -1,0 +1,45 @@
+@import "@/app.scss";
+
+.header {
+  align-items: center;
+  background-color: $bg-navbar-primary;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  .profile {
+    color: $text-primary;
+    font-size: 2rem;
+    padding: 0.5rem;
+    text-decoration: none;
+
+    &:hover {
+      background-color: $bg-hover;
+    }
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none !important;
+
+    li {
+      text-decoration: none;
+
+      a {
+        border-radius: 1rem;
+        color: $text-primary;
+        font-size: 1.25rem;
+        padding: 0.5rem;
+        text-decoration: none;
+        width: 100%;
+
+        &:hover {
+          background-color: $bg-hover;
+        }
+      }
+    }
+  }
+}
