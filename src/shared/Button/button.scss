@@ -1,0 +1,13 @@
+@import "@/app.scss";
+
+button {
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: $bg-primary;
+
+  &:hover {
+    background-color: $bg-navbar-primary;
+    color: white;
+    cursor: pointer;
+  }
+}
