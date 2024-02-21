@@ -1,6 +1,7 @@
 @import "@/app.scss";
 
 .cv {
+  @include fade(false);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -11,5 +12,17 @@
   .viewer {
     overflow: auto;
     margin: 1rem;
+  }
+  &--fade {
+    @include fade(true);
+    display: flex;
+    flex-direction: column;
+    height: $page-height;
+    background-color: $bg-secondary;
+    margin: 1rem;
+    .viewer {
+      overflow: auto;
+      margin: 1rem;
+    }
   }
 }
