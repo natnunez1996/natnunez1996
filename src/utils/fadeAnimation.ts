@@ -8,6 +8,7 @@ export function fadeAnimation(
     location: string): void {
     setFade(true);
     setTimeout(() => {
+        setFade(false)
         navigate(location)
-    }, 900)
+    }, 1000)
 }
