@@ -3,11 +3,15 @@
 button {
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: $bg-primary;
+  background-color: $text-primary;
+  font-size: 1.25rem;
+  font-weight: bold;
+  border-width: 0.2rem;
+  color: $bg-navbar-primary;
 
   &:hover {
     background-color: $bg-navbar-primary;
-    color: white;
+    color: $text-primary;
     cursor: pointer;
   }
 }
