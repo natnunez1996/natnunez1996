@@ -2,9 +2,8 @@
 
 .home {
   width: 100%;
-  height: calc(100vh - 2rem);
+  height: $page-height;
   top: 1rem;
-  position: relative;
   .aboutSection {
     @include fade(false);
     margin: 1rem;
