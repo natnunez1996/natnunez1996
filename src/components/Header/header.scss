@@ -9,12 +9,14 @@
   top: 0;
   width: 100%;
   z-index: 1;
+  height: 3.25rem;
 
   .profile {
     color: $text-primary;
     font-size: 2rem;
     padding: 0.5rem;
     text-decoration: none;
+    cursor: pointer;
 
     &:hover {
       background-color: $bg-hover;
