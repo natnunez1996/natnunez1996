@@ -13,12 +13,12 @@ export default function Header(): React.JSX.Element {
 
     return (
         <div className='header'>
-            <a href='/' className='profile'>Nathaniel Nunez</a>
+            <a onClick={() => { fadeAnimation(setFade, navigate, '/') }} className='profile'>Nathaniel Nunez</a>
             <ul className=''>
                 <li><a onClick={() => { fadeAnimation(setFade, navigate, 'about') }}>About</a></li>
                 <li><a href="projects">Projects</a></li>
                 <li><a href="hobbies">Hobbies</a></li>
-                <li><a href="cv">CV</a></li>
+                <li><a onClick={() => { fadeAnimation(setFade, navigate, 'cv') }}>CV</a></li>
                 <li><a href="contacts">Contacts</a></li>
             </ul>
 
