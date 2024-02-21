@@ -1,0 +1,15 @@
+@import "@/app.scss";
+
+.cv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: $page-height;
+  background-color: $bg-secondary;
+  margin: 1rem;
+
+  .viewer {
+    overflow: auto;
+    margin: 1rem;
+  }
+}
