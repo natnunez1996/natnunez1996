@@ -1,4 +1,7 @@
-import { defineConfig } from 'vitest/config'
+/* eslint-disable @typescript-eslint/triple-slash-reference */
+/// <reference types="vitest"/>
+/// <reference types="vite/client"/>
+import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { resolve } from 'path'
 import tailwindcss from 'tailwindcss'
@@ -17,8 +20,9 @@ export default defineConfig({
     }
   },
   test: {
+    css: true,
     globals: true,
     environment: 'jsdom',
-    setupFiles: './setupTest.ts'
+    setupFiles: ['./src/setupTests.ts']
   }
 })
