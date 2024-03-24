@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import './header.scss'
 import { useNavigate } from 'react-router-dom'
 import { FadeContext } from '@/App';

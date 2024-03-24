@@ -1,1 +1,1 @@
-export { default as Button } from '@/shared/Button/Button'
+export { default as Header } from '@/shared/Header/Header';

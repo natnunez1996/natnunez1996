@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/unbound-method */
-import { Button } from '@/shared';
+import { Button } from '@/components';
 import { FadeContext } from '@/App';
 import { Viewer, SpecialZoomLevel, Worker } from '@react-pdf-viewer/core'
 import { getFilePlugin, type RenderDownloadProps } from '@react-pdf-viewer/get-file'
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import file from '@/assets/file/Nathaniel Nunez Resume.pdf';
 import './cv.scss'
 import '@react-pdf-viewer/core/lib/styles/index.css';
@@ -17,7 +17,7 @@ export default function Cv(): React.JSX.Element {
 
 
     return (
-        <div className={fade ? 'cv--fade' : 'cv'}>
+        <div data-testid="cv-page" className={fade ? 'cv--fade' : 'cv'}>
             <Worker workerUrl="https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.min.js">
                 <Download>
                     {(props: RenderDownloadProps) => (

@@ -1,14 +1,13 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import profilePic from '@/assets/images/profilepic.jpg'
 import './home.scss'
-import { Button } from '@/shared'
+import { Button } from '@/components'
 import { useNavigate } from 'react-router-dom'
 import { FadeContext } from '@/App'
 import fadeAnimation from '@/utils'
 
 export default function Home(): React.JSX.Element {
     const navigate = useNavigate();
-    // const [fade, setFade] = useState<boolean>(false);
     const [fade, setFade]: [boolean, React.Dispatch<React.SetStateAction<boolean>>] = useContext(FadeContext)
 
     const handleClick = (location: string): void => {
@@ -17,7 +16,7 @@ export default function Home(): React.JSX.Element {
 
 
     return (
-        <div className='home'>
+        <div className='home' data-testid="home-page">
             <section className={fade ? "aboutSectionfade" : "aboutSection"}>
                 <img src={profilePic} alt="Nathaniel's Picture" />
                 <div>
