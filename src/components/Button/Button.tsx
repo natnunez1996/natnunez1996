@@ -1,4 +1,5 @@
 import './button.scss'
+import { motion } from 'framer-motion'
 
 interface Props {
     children: React.ReactNode,
@@ -6,6 +7,6 @@ interface Props {
 }
 export default function Button({ children, onClick }: Props): React.JSX.Element {
     return (
-        <button onClick={onClick}>{children}</button>
+        <motion.button whileHover={{ scale: .9 }} whileTap={{ scale: 1.1 }} onClick={onClick}>{children}</motion.button>
     )
 }
