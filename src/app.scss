@@ -10,30 +10,3 @@ $page-height: calc(100vh - 5.25rem);
   padding: 0;
   background-color: $bg-primary;
 }
-
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@mixin fade($isFading) {
-  @if $isFading == true {
-    animation-name: fade-out;
-  } @else {
-    animation-name: fade-in;
-  }
-  animation-duration: 1.2s;
-}

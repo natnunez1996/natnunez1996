@@ -1,7 +1,6 @@
 @import "@/app.scss";
 
 .cv {
-  @include fade(false);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -9,20 +8,12 @@
   background-color: $bg-secondary;
   margin: 1rem;
 
+  .downloadButton {
+    margin: 0 auto;
+  }
   .viewer {
     overflow: auto;
-    margin: 1rem;
-  }
-  &--fade {
-    @include fade(true);
-    display: flex;
-    flex-direction: column;
-    height: $page-height;
-    background-color: $bg-secondary;
-    margin: 1rem;
-    .viewer {
-      overflow: auto;
-      margin: 1rem;
-    }
+    margin: 0 auto;
+    width: 70vw;
   }
 }

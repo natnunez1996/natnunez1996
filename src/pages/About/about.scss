@@ -1,0 +1,26 @@
+@import "@/app.scss";
+
+.about {
+  display: flex;
+  background-color: $bg-secondary;
+  margin: 1rem;
+
+  .aboutMe {
+    .education {
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+
+  .techStack {
+    .card {
+      margin: 0 auto;
+    }
+  }
+
+  figure {
+    margin: 1rem;
+  }
+}
