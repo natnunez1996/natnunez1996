@@ -1,23 +1,22 @@
-import { useContext } from 'react'
 import profilePic from '@/assets/images/profilepic.jpg'
 import './home.scss'
 import { Button } from '@/components'
 import { useNavigate } from 'react-router-dom'
-import { FadeContext } from '@/App'
-import fadeAnimation from '@/utils'
+import { motion } from 'framer-motion'
+
 
 export default function Home(): React.JSX.Element {
     const navigate = useNavigate();
-    const [fade, setFade]: [boolean, React.Dispatch<React.SetStateAction<boolean>>] = useContext(FadeContext)
-
-    const handleClick = (location: string): void => {
-        fadeAnimation(setFade, navigate, location)
-    }
 
 
     return (
-        <div className='home' data-testid="home-page">
-            <section className={fade ? "aboutSectionfade" : "aboutSection"}>
+        <motion.div
+            animate={{ opacity: 1, transition: { duration: 1 } }}
+            className='home'
+            data-testid="home-page"
+            initial={{ opacity: 0 }}
+        >
+            <section className="aboutSection">
                 <img src={profilePic} alt="Nathaniel's Picture" />
                 <div>
                     <h1>Nathaniel N. Nunez</h1>
@@ -28,9 +27,9 @@ export default function Home(): React.JSX.Element {
                         Feel free to contact me if you have any projects you want
                         to collaborate with me.
                     </p>
-                    <Button onClick={() => { handleClick('about') }}>Learn More about me...</Button>
+                    <Button onClick={() => { navigate('/about') }}>Learn More about me...</Button>
                 </div>
             </section>
-        </div >
+        </motion.div >
     )
 }
