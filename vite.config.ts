@@ -8,7 +8,7 @@ import tailwindcss from 'tailwindcss'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/natnunez1996.github.io/',
+  base: '/natnunez1996/',
   plugins: [react()],
   resolve: {
     alias: {
