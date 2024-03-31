@@ -15,40 +15,30 @@
   }
 
   .techStack {
-    .techStack-header {
+    h2 {
+      text-align: center;
+    }
+    .techStack-body {
+      height: 250px;
+      width: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: space-around;
-    }
-    .card {
-      position: absolute;
-      margin: 0 auto;
-      left: 230px;
-    }
-    .next,
-    .prev {
-      position: relative;
-      background: white;
-      border-radius: 30px;
-      width: 40px;
-      height: 40px;
-      display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
-      user-select: none;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 18px;
-      z-index: 2;
-    }
+      margin: 1rem;
 
-    .next {
-      right: 10px;
-    }
+      .card {
+        position: relative;
+        margin: 0 auto;
+      }
 
-    .prev {
-      left: 10px;
-      transform: scale(-1);
+      .prev {
+        transform: scaleX(-1);
+
+        :hover {
+          transform: scaleX(-1);
+        }
+      }
     }
   }
 }
