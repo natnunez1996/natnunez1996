@@ -1,35 +1,15 @@
 import profilePic from '@/assets/images/profilepic.jpg'
 import './about.scss'
-import { Card } from '@/components'
-import { AnimatePresence, motion } from 'framer-motion'
+import { Button, Slideshow } from '@/components'
+import { motion } from 'framer-motion'
 import { stack } from '@/assets/data/techstack'
 import { useState } from 'react'
 
-const variants = {
-    enter: (direction: number) => {
-        return {
-            x: direction > 0 ? 100 : -100,
-            opacity: 0
-        };
-    },
-    center: {
-        zIndex: 1,
-        x: 0,
-        opacity: 1
-    },
-    exit: (direction: number) => {
-        return {
-            zIndex: 0,
-            x: direction < 0 ? 100 : -100,
-            opacity: 0
-        };
-    }
-};
 
 
 export default function About(): JSX.Element {
 
-    const [page, setPage] = useState<number>(0);
+    const [[page, direction], setPage] = useState<[number, number]>([0, 0]);
 
 
     const paginate = (newPage: number): void => {
@@ -40,7 +20,7 @@ export default function About(): JSX.Element {
             finalNewPage = stack.length - 1
         }
 
-        setPage(finalNewPage)
+        setPage([finalNewPage, newPage])
     }
 
     return (
@@ -63,38 +43,19 @@ export default function About(): JSX.Element {
                     <p><em>GPA:</em> 83.3</p>
                 </div>
                 <div className="techStack">
-                    <div className="techStack-header">
-                        <div className="prev" onClick={() => { paginate(-1) }}>
-                            {"‣"}
-                        </div>
-                        <h1>Tech Stack:</h1>
-                        <div className="next" onClick={() => { paginate(1) }}>
-                            {"‣"}
-                        </div>
-                    </div>
-                    <div className="slideshow">
-                        <AnimatePresence mode="wait" custom={page} initial={false}>
-                            <motion.div
-                                key={page}
-                                variants={variants}
-                                custom={page}
-                                initial="enter"
-                                animate="center"
-                                exit="exit"
-                                transition={{
-                                    x: { type: 'just', stiffness: 300, damping: 30 },
-                                    opacity: { duration: .2 }
-                                }}
-                            >
-                                <Card
-                                    title={stack[page].title}
-                                    description={stack[page].description}
-                                    imgSource={stack[page].imgSrc}
-                                />
-                            </motion.div>
-                        </AnimatePresence>
-                    </div>
+                    <h2>Tech Stack:</h2>
 
+                    <div className="techStack-body">
+                        <div className="prev">
+                            <Button onClick={() => { paginate(-1) }}>
+                                {" ‣ "}
+                            </Button>
+                        </div>
+                        <Slideshow data={stack} direction={direction} page={page} />
+                        <Button onClick={() => { paginate(1) }}>
+                            {" ‣ "}
+                        </Button>
+                    </div>
                 </div>
             </section>
             <figure>
