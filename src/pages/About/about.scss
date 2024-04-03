@@ -4,8 +4,40 @@
   display: flex;
   background-color: $bg-secondary;
   margin: 1rem;
+  justify-content: space-around;
+  padding: 1rem;
 
   .aboutMe {
+    .personalInfo {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      article {
+        h1 {
+          font-size: 3rem;
+          text-align: center;
+        }
+
+        .socialMedia {
+          ul {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            list-style-type: none;
+            img {
+              height: 32px;
+              width: 32px;
+              margin: 0.25rem;
+            }
+          }
+        }
+        p {
+          font-size: 1.25rem;
+        }
+      }
+    }
+
     .education {
       a {
         text-decoration: none;
