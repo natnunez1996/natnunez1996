@@ -20,6 +20,13 @@ export default defineConfig({
       plugins: [tailwindcss()]
     }
   },
+  build: {
+    manifest: true,
+    rollupOptions: {
+      // overwrite default .html entry
+      input: '/path/to/main.tsx',
+    }
+  },
   test: {
     css: true,
     globals: true,
