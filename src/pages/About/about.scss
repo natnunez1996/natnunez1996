@@ -8,60 +8,76 @@
   padding: 1rem;
 
   .aboutMe {
-    .personalInfo {
+    > *:not(:last-child) {
       display: flex;
       justify-content: space-around;
-      align-items: center;
 
       article {
+        flex: 50%;
         h1 {
           font-size: 3rem;
           text-align: center;
         }
 
-        .socialMedia {
-          ul {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            list-style-type: none;
-            img {
-              height: 32px;
-              width: 32px;
-              margin: 0.25rem;
-            }
-          }
-        }
         p {
           font-size: 1.25rem;
+        }
+      }
+
+      figure {
+        flex: 50%;
+        transform: scale(0.75);
+      }
+    }
+
+    .personalInfo {
+      align-items: center;
+      .socialMedia {
+        ul {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          list-style-type: none;
+          img {
+            height: 32px;
+            width: 32px;
+            margin: 0.25rem;
+          }
         }
       }
     }
 
     .education {
+      h2 {
+        font-size: 1.75rem;
+      }
+
       a {
         text-decoration: none;
-        color: black;
+      }
+
+      h3 {
+        font-size: 1.5rem;
       }
     }
   }
 
   .techStack {
-    h2 {
+    margin: 1rem;
+    h1 {
       text-align: center;
+      font-size: 3rem;
     }
     .techStack-body {
       height: 250px;
-      width: 100%;
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
-      margin: 1rem;
+      font-size: 1.25rem;
 
-      .card {
-        position: relative;
-        margin: 0 auto;
+      .slideshow {
+        width: 350px;
       }
 
       .prev {
