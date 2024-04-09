@@ -1,4 +1,3 @@
-import profilePic from '@/assets/images/profilepic.jpg'
 import './about.scss'
 import { Button, Slideshow } from '@/components'
 import { motion } from 'framer-motion'
@@ -6,6 +5,8 @@ import { stack } from '@/assets/data/techstack'
 import { useState } from 'react'
 import github from '@/assets/icons/github.svg'
 import linkedIn from '@/assets/icons/linkedin.svg'
+import mohawkCollege from '@/assets/images/mohawkcollege.jpg'
+import profilePic from '@/assets/images/profilepic.jpg'
 
 
 
@@ -48,19 +49,28 @@ export default function About(): JSX.Element {
 
                     </article>
 
-
                     <figure>
                         <img src={profilePic} alt="Nathaniel's Picture" />
                     </figure>
                 </div>
                 <div className="education">
-                    <h1>Education</h1>
-                    <h3><a href='https://www.mohawkcollege.ca/'>Mohawk College</a></h3>
-                    <h3>C.S. Technician - Software Support</h3>
-                    <p><em>GPA:</em> 83.3</p>
+                    <figure>
+                        <img src={mohawkCollege} alt='Mohawk College Photo' />
+                    </figure>
+                    <article>
+                        <h1>Education</h1>
+                        <h2><a href='https://www.mohawkcollege.ca/'>Mohawk College</a> (2020 - 2021)</h2>
+                        <h3>C.S. Technician - Software Support</h3>
+                        <p><em>GPA:</em> 83.3</p>
+                        <ul>
+                            <li>Data Structures & Algorithm</li>
+                            <li>HTML5, CSS3, Javascript, Java, Python, PHP, C#</li>
+                            <li>React Library, React Native, Wordpress</li>
+                        </ul>
+                    </article>
                 </div>
                 <div className="techStack">
-                    <h2>Tech Stack:</h2>
+                    <h1>Tech Stack:</h1>
 
                     <div className="techStack-body">
                         <div className="prev">
