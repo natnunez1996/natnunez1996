@@ -38,8 +38,8 @@ export default function About(): JSX.Element {
                         <h1>Nathaniel Nunez</h1>
                         <div className="socialMedia">
                             <ul>
-                                <li><a href='https://github.com/natnunez1996'><img src={github} /></a></li>
-                                <li><a href='https://www.linkedin.com/in/nathaniel-nunez-1a89a5210'><img src={linkedIn} /></a></li>
+                                <li><a href='https://github.com/natnunez1996' target='_blank' rel="noopener noreferrer"><img src={github} /></a></li>
+                                <li><a href='https://www.linkedin.com/in/nathaniel-nunez-1a89a5210' target='_blank' rel="noopener noreferrer"><img src={linkedIn} /></a></li>
                             </ul>
                         </div>
                         <p>Hi, I am Nathaniel Nunez. Born and grew up in the Philippines.
@@ -59,7 +59,7 @@ export default function About(): JSX.Element {
                     </figure>
                     <article>
                         <h1>Education</h1>
-                        <h2><a href='https://www.mohawkcollege.ca/'>Mohawk College</a> (2020 - 2021)</h2>
+                        <h2><a href='https://www.mohawkcollege.ca/' target="_blank" rel="noopener noreferrer">Mohawk College</a> (2020 - 2021)</h2>
                         <h3>C.S. Technician - Software Support</h3>
                         <p><em>GPA:</em> 83.3</p>
                         <ul>
