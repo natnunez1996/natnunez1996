@@ -1,18 +1,15 @@
-import { motion } from 'framer-motion'
 
 interface Props {
     imgSrc: string
+    link: string
     title: string
 }
 
-function ImageContainer({ imgSrc, title }: Props): JSX.Element {
+function ImageContainer({ imgSrc, link, title }: Props): JSX.Element {
     return (
-        <motion.div
-            animate={{ opacity: 1, x: 0, transition: { x: { stiffness: 1000, velocity: -100 } } }}
-            initial={{ opacity: 0 }}
-        >
+        <a href={link} target='_blank' rel='noopener noreferrer'>
             <img src={imgSrc} alt={title} />
-        </motion.div>
+        </a>
     )
 }
 
