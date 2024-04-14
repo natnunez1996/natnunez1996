@@ -1,0 +1,37 @@
+@import "@/app.scss";
+
+.projects {
+  background-color: $bg-secondary;
+  margin: 1rem;
+  padding: 1rem;
+  min-height: calc(100vh - 8rem);
+
+  > * {
+    display: flex;
+    flex-direction: row;
+  }
+  .cardTracker {
+    .leftSide {
+      width: 40%;
+      align-items: center;
+      h2 {
+        text-align: center;
+      }
+
+      img {
+        width: 20px;
+        height: 20px;
+        margin-left: 0.5rem;
+      }
+    }
+
+    .rightSide {
+      width: 60%;
+      text-align: center;
+      img {
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+}
