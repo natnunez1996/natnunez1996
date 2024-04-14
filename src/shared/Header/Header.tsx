@@ -14,7 +14,6 @@ export default function Header(): React.JSX.Element {
             <ul className=''>
                 <li><Button onClick={() => { navigate('/about') }}>About</Button> </li>
                 <li><Button onClick={() => { navigate('/projects') }}>Projects</Button></li>
-                <li><Button onClick={() => { navigate('/hobbies') }}>Hobbies</Button></li>
                 <li><Button onClick={() => { navigate('/cv') }}>CV</Button></li>
                 <li><Button onClick={() => { navigate('/contacts') }}>Contacts</Button></li>
             </ul >
