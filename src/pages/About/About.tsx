@@ -1,19 +1,26 @@
 import './about.scss'
-import { Button, Slideshow } from '@/components'
-import { motion } from 'framer-motion'
-import { stack } from '@/assets/data/techstack'
-import { useState } from 'react'
 import github from '@/assets/icons/github.svg'
 import linkedIn from '@/assets/icons/linkedin.svg'
 import mohawkCollege from '@/assets/images/mohawkcollege.jpg'
 import profilePic from '@/assets/images/profilepic.jpg'
+import ImageViewer from 'react-simple-image-viewer';
+import { Button, IconContainer, Slideshow } from '@/components'
+import { motion } from 'framer-motion'
+import { stack } from '@/assets/data/techstack'
+import { useState } from 'react'
+import { closeImageViewer, openImage } from '@/utils/imageViewerUtils'
 
 
 
 export default function About(): JSX.Element {
+    const images: string[] = [
+        profilePic,
+        mohawkCollege
+    ]
 
     const [[page, direction], setPage] = useState<[number, number]>([0, 0]);
-
+    const [currentImage, setCurrentImage] = useState(0);
+    const [imageViewerOpen, setImageViewerOpen] = useState(false);
 
     const paginate = (newPage: number): void => {
         let finalNewPage = newPage + page;
@@ -38,8 +45,8 @@ export default function About(): JSX.Element {
                         <h1>Nathaniel Nunez</h1>
                         <div className="socialMedia">
                             <ul>
-                                <li><a href='https://github.com/natnunez1996' target='_blank' rel="noopener noreferrer"><img src={github} /></a></li>
-                                <li><a href='https://www.linkedin.com/in/nathaniel-nunez-1a89a5210' target='_blank' rel="noopener noreferrer"><img src={linkedIn} /></a></li>
+                                <li><IconContainer iconSize='40px' imgSrc={github} link='https://github.com/natnunez1996' /></li>
+                                <li><IconContainer iconSize='40px' imgSrc={linkedIn} link='https://www.linkedin.com/in/nathaniel-nunez-1a89a5210' /></li>
                             </ul>
                         </div>
                         <p>Hi, I am Nathaniel Nunez. Born and grew up in the Philippines.
@@ -50,12 +57,12 @@ export default function About(): JSX.Element {
                     </article>
 
                     <figure>
-                        <img src={profilePic} alt="Nathaniel's Picture" />
+                        <img src={images[0]} onClick={() => { openImage(0, setCurrentImage, setImageViewerOpen) }} alt="Nathaniel's Picture" />
                     </figure>
                 </div>
                 <div className="education">
                     <figure>
-                        <img src={mohawkCollege} alt='Mohawk College Photo' />
+                        <img src={images[1]} onClick={() => { openImage(1, setCurrentImage, setImageViewerOpen) }} alt='Mohawk College Photo' />
                     </figure>
                     <article>
                         <h1>Education</h1>
@@ -85,6 +92,17 @@ export default function About(): JSX.Element {
                     </div>
                 </div>
             </div>
+
+            {
+                imageViewerOpen &&
+                <ImageViewer
+                    src={images}
+                    closeOnClickOutside={true}
+                    disableScroll={true}
+                    currentIndex={currentImage}
+                    onClose={() => { closeImageViewer(setImageViewerOpen) }}
+                />
+            }
         </motion.div>
     )
 }
