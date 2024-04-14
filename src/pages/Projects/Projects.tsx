@@ -1,14 +1,24 @@
-import { motion } from 'framer-motion'
 import './projects.scss'
 import cardTrackerDark from '@/assets/images/cardTracker1.png'
 import cardTrackerLight from '@/assets/images/cardTracker1Light.png'
+import github from '@/assets/icons/github.svg'
 import link from '@/assets/icons/arrow-up-right-from-square-solid.svg'
-import { Button } from '@/components'
+import ImageViewer from 'react-simple-image-viewer';
+import { Button, IconContainer, ImageContainer } from '@/components'
+import { stack as cardTrackerStack } from '@/assets/data/cardTrackerStack'
+import { motion } from 'framer-motion'
 import { useState } from 'react'
+import { openImage, closeImageViewer } from '@/utils/imageViewerUtils'
 
 function Projects(): JSX.Element {
 
+    const images: string[] = [
+        cardTrackerDark,
+        cardTrackerLight
+    ]
     const [dark, setDark] = useState(false);
+    const [currentImage, setCurrentImage] = useState(0);
+    const [imageViewerOpen, setImageViewerOpen] = useState(false);
 
     return (
         <motion.div
@@ -17,58 +27,59 @@ function Projects(): JSX.Element {
             initial={{ opacity: 0 }}
         >
             <div className="cardTracker">
-                <div className="leftSide">
-                    <h2>
+                <section className="leftSide">
+                    <h1>
                         Card Tracker
-                        <a href='https://card-tracker-seven.vercel.app/' target='_blank' rel='noopener noreferrer' >
-                            <img src={link} />
-                        </a>
+                    </h1>
+                    <h2>
+                        <IconContainer imgSrc={link} link="https://card-tracker-seven.vercel.app/" />
+                        <IconContainer imgSrc={github} link="https://github.com/natnunez1996/CardTracker-Frontend" />
                     </h2>
                     <p>A MERN stack that is responsible for tracking credit cards, debit cards, and gift
                         cards.
                     </p>
                     <ul>
-                        <li>
-                            MongoDB (Database) - NoSQL Database is one of the best options for the project as it is
-                            only a small project and not much relation is needed to properly distribute the files and
-                            Mongoose which I used in the backend too.
-                        </li>
-                        <li>
-                            ExpressJS (Backend) - since I am more comfortable with Javascript, I used ExpressJS to
-                            handle my RESTFUL API.
-                        </li>
-                        <li>
-                            React TypeScript + Vite (Frontend) - React is the library that I am exposed to, and I
-                            chose Typescript to easily find any bugs / prevent them while doing the project.
-                        </li>
-                        <li>
-                            Style + Components Library: Material UI - I used Material UI because of its built-in
-                            capabilities and ability to easily replicate the code from its documentation. It also allows
-                            an inline styling using Vanilla CSS which makes it more flexible.
-                        </li>
-                        <li>
-                            React Form - a built-in library for managing forms with React. I used this to avoid
-                            making too many callback functions and event handling. It also has good documentation
-                            that is useful like: The controller which is responsible for controlling all my custom
-                            inputs that are built with MUI Components.
-                        </li>
-                        <li>
-                            Redux, Redux Toolkit - Store manager for data coming from RESTful API calls
-                        </li>
+                        {cardTrackerStack.map(stack => {
+                            return (
+                                <motion.li
+                                    key={stack.title}
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <ImageContainer
+                                        imgSrc={stack.imgSrc}
+                                        link={stack.link}
+                                        title={stack.title}
+                                    />
+                                </motion.li>
+                            )
+                        })}
                     </ul>
-                </div>
+
+                </section>
                 <div className="rightSide">
 
                     <Button onClick={() => { setDark(prev => !prev) }}>{!dark ? "Dark Mode" : "Light Mode"}</Button>
                     <figure>
                         {
                             dark ?
-                                <img src={cardTrackerDark} alt="Card Tracker Sample" /> :
-                                <img src={cardTrackerLight} alt="Card Tracker Sample" />
+                                <img src={images[0]} onClick={() => { openImage(0, setCurrentImage, setImageViewerOpen) }} alt="Card Tracker Sample" /> :
+                                <img src={images[1]} onClick={() => { openImage(1, setCurrentImage, setImageViewerOpen) }} alt="Card Tracker Sample" />
                         }
                     </figure>
                 </div>
             </div>
+
+            {
+                imageViewerOpen &&
+                <ImageViewer
+                    src={images}
+                    currentIndex={currentImage}
+                    disableScroll={true}
+                    closeOnClickOutside={true}
+                    onClose={() => { closeImageViewer(setImageViewerOpen) }}
+                />
+            }
         </motion.div>
     )
 }
