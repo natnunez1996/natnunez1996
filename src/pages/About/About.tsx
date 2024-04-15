@@ -4,8 +4,7 @@ import linkedIn from '@/assets/icons/linkedin.svg'
 import mohawkCollege from '@/assets/images/mohawkcollege.jpg'
 import profilePic from '@/assets/images/profilepic.jpg'
 import ImageViewer from 'react-simple-image-viewer';
-import { Button, IconContainer, Slideshow } from '@/components'
-import { motion } from 'framer-motion'
+import { Button, Container, IconContainer, Slideshow } from '@/components'
 import { stack } from '@/assets/data/techstack'
 import { useState } from 'react'
 import { closeImageViewer, openImage } from '@/utils/imageViewerUtils'
@@ -34,10 +33,7 @@ export default function About(): JSX.Element {
     }
 
     return (
-        <motion.div
-            animate={{ opacity: 1, transition: { duration: 1 } }}
-            className='about'
-            initial={{ opacity: 0 }}
+        <Container className='about'
         >
             <div className='aboutMe'>
                 <div className="personalInfo">
@@ -103,6 +99,6 @@ export default function About(): JSX.Element {
                     onClose={() => { closeImageViewer(setImageViewerOpen) }}
                 />
             }
-        </motion.div>
+        </Container>
     )
 }

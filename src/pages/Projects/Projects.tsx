@@ -4,7 +4,7 @@ import cardTrackerLight from '@/assets/images/cardTracker1Light.png'
 import github from '@/assets/icons/github.svg'
 import link from '@/assets/icons/arrow-up-right-from-square-solid.svg'
 import ImageViewer from 'react-simple-image-viewer';
-import { Button, IconContainer, ImageContainer } from '@/components'
+import { Button, Container, IconContainer, ImageContainer } from '@/components'
 import { stack as cardTrackerStack } from '@/assets/data/cardTrackerStack'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
@@ -21,11 +21,7 @@ function Projects(): JSX.Element {
     const [imageViewerOpen, setImageViewerOpen] = useState(false);
 
     return (
-        <motion.div
-            animate={{ opacity: 1, transition: { duration: 1 } }}
-            className='projects'
-            initial={{ opacity: 0 }}
-        >
+        <Container className='projects'>
             <div className="cardTracker">
                 <section className="leftSide">
                     <h1>
@@ -80,7 +76,7 @@ function Projects(): JSX.Element {
                     onClose={() => { closeImageViewer(setImageViewerOpen) }}
                 />
             }
-        </motion.div>
+        </Container>
     )
 }
 

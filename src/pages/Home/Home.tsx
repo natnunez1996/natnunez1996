@@ -1,8 +1,7 @@
 import profilePic from '@/assets/images/profilepic.jpg'
 import './home.scss'
-import { Button } from '@/components'
+import { Button, Container } from '@/components'
 import { useNavigate } from 'react-router-dom'
-import { motion } from 'framer-motion'
 
 
 export default function Home(): React.JSX.Element {
@@ -10,11 +9,9 @@ export default function Home(): React.JSX.Element {
 
 
     return (
-        <motion.div
-            animate={{ opacity: 1, transition: { duration: 1 } }}
+        <Container
             className='home'
             data-testid="home-page"
-            initial={{ opacity: 0 }}
         >
             <section className="aboutSection">
                 <img src={profilePic} alt="Nathaniel's Picture" />
@@ -30,6 +27,6 @@ export default function Home(): React.JSX.Element {
                     <Button onClick={() => { navigate('/about') }}>Learn More about me...</Button>
                 </div>
             </section>
-        </motion.div >
+        </Container >
     )
 }
