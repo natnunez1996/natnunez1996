@@ -11,7 +11,7 @@ import { closeImageViewer, openImage } from '@/utils/imageViewerUtils'
 
 
 
-export default function About(): JSX.Element {
+export function About(): JSX.Element {
     const images: string[] = [
         profilePic,
         mohawkCollege
@@ -53,12 +53,12 @@ export default function About(): JSX.Element {
                     </article>
 
                     <figure>
-                        <img src={images[0]} onClick={() => { openImage(0, setCurrentImage, setImageViewerOpen) }} alt="Nathaniel's Picture" />
+                        <img src={images[0]} loading='lazy' onClick={() => { openImage(0, setCurrentImage, setImageViewerOpen) }} alt="Nathaniel's Picture" />
                     </figure>
                 </div>
                 <div className="education">
                     <figure>
-                        <img src={images[1]} onClick={() => { openImage(1, setCurrentImage, setImageViewerOpen) }} alt='Mohawk College Photo' />
+                        <img src={images[1]} loading='lazy' onClick={() => { openImage(1, setCurrentImage, setImageViewerOpen) }} alt='Mohawk College Photo' />
                     </figure>
                     <article>
                         <h1>Education</h1>

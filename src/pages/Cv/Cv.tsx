@@ -7,7 +7,7 @@ import './cv.scss'
 import '@react-pdf-viewer/core/lib/styles/index.css';
 
 
-export default function Cv(): React.JSX.Element {
+export function Cv(): React.JSX.Element {
     const getFilePluginInstance = getFilePlugin();
     const { Download } = getFilePluginInstance;
 
@@ -27,7 +27,6 @@ export default function Cv(): React.JSX.Element {
                     </Download>
                 </div>
                 <div className="viewer">
-
                     <Viewer fileUrl={file} defaultScale={SpecialZoomLevel.PageWidth} plugins={[getFilePluginInstance]} />
                 </div>
             </Worker>

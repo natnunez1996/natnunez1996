@@ -4,7 +4,7 @@ import { Button, Container } from '@/components'
 import { useNavigate } from 'react-router-dom'
 
 
-export default function Home(): React.JSX.Element {
+export function Home(): React.JSX.Element {
     const navigate = useNavigate();
 
 

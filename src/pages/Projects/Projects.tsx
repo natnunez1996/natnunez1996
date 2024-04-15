@@ -10,7 +10,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { openImage, closeImageViewer } from '@/utils/imageViewerUtils'
 
-function Projects(): JSX.Element {
+export function Projects(): JSX.Element {
 
     const images: string[] = [
         cardTrackerDark,
@@ -79,5 +79,3 @@ function Projects(): JSX.Element {
         </Container>
     )
 }
-
-export default Projects
