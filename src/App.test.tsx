@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react'
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import userEvent from '@testing-library/user-event'
 import { Cv, Home } from './pages';
-import App from './App';
+import { App } from './App';
 
 
 describe("Render App", () => {
