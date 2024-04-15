@@ -11,38 +11,13 @@
   z-index: 1;
   height: 3.25rem;
 
-  .profile {
-    color: $text-primary;
-    font-size: 2rem;
-    padding: 0.5rem;
-    text-decoration: none;
-    cursor: pointer;
-
-    &:hover {
-      background-color: $bg-hover;
-    }
-  }
-
-  ul {
+  > ul {
     display: flex;
     list-style-type: none !important;
     margin-right: 0.5rem;
+
     li {
-      text-decoration: none;
-
-      a {
-        border-radius: 1rem;
-        color: $text-primary;
-        font-size: 1.25rem;
-        padding: 0.5rem;
-        text-decoration: none;
-        width: 100%;
-        cursor: pointer;
-
-        &:hover {
-          background-color: $bg-hover;
-        }
-      }
+      margin: 0.1rem;
     }
   }
 }
