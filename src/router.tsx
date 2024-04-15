@@ -1,28 +1,49 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "./App";
-import { About, Cv, Home, Projects } from "@/pages";
 
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <App />,
+        async lazy() {
+            const { App } = await import("./App")
+            return { Component: App }
+        },
         children: [
             {
-                path: "",
-                element: <Home />
+                index: true,
+                async lazy() {
+                    const { Home } = await import('@/pages')
+                    return { Component: Home }
+                }
             },
             {
                 path: "about",
-                element: <About />
+                async lazy() {
+                    const { About } = await import('@/pages')
+                    return { Component: About }
+                }
             },
             {
                 path: 'cv',
-                element: <Cv />
+                async lazy() {
+                    const { Cv } = await import('@/pages')
+                    return { Component: Cv }
+                }
             },
             {
                 path: 'projects',
-                element: <Projects />
+                async lazy() {
+                    const { Projects } = await import('@/pages')
+                    return { Component: Projects }
+                }
+            },
+            {
+                path: '*',
+                index: true,
+                async lazy() {
+                    const { Home } = await import('@/pages')
+                    return { Component: Home }
+                }
             }
         ]
     }
