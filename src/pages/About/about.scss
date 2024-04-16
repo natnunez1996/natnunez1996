@@ -2,72 +2,81 @@
 
 .about {
   display: flex;
-  background-color: $bg-secondary;
-  margin: 1rem;
   justify-content: space-around;
   padding: 1rem;
+  flex-direction: column;
 
-  .aboutMe {
-    > *:not(:last-child) {
-      display: flex;
-      justify-content: space-around;
+  > * {
+    padding: 1rem;
+  }
 
-      article {
-        flex: 50%;
-        h1 {
-          font-size: 3rem;
-          text-align: center;
+  > *:nth-child(odd) {
+    background-color: $bg-secondary;
+    color: $bg-navbar-primary;
+  }
+
+  > *:nth-child(even) {
+    background-color: $bg-navbar-primary;
+    color: $bg-secondary;
+  }
+
+  .aboutBody {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  article {
+    p {
+      font-size: 1.5rem;
+      text-align: justify;
+    }
+  }
+
+  figure {
+    img {
+      max-width: 100%;
+      cursor: pointer;
+    }
+  }
+
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .personalInfo {
+    .socialMedia {
+      ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        list-style-type: none;
+        img {
+          margin: 0.25rem;
         }
-
-        p {
-          font-size: 1.25rem;
-        }
-      }
-
-      figure {
-        flex: 50%;
-        transform: scale(0.75);
       }
     }
+  }
 
-    .personalInfo {
-      align-items: center;
-      .socialMedia {
-        ul {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          list-style-type: none;
-          img {
-            margin: 0.25rem;
+  .education {
+    .aboutBody {
+      article {
+        h2 {
+          font-size: 2rem;
+          a {
+            text-decoration: none;
+            color: $bg-secondary;
           }
         }
-      }
-    }
-
-    .education {
-      h2 {
-        font-size: 1.75rem;
-      }
-
-      a {
-        text-decoration: none;
-      }
-
-      h3 {
-        font-size: 1.5rem;
+        h3 {
+          font-size: 1.5rem;
+        }
       }
     }
   }
 
   .techStack {
-    margin: 1rem;
-    h1 {
-      text-align: center;
-      font-size: 3rem;
-    }
     .techStack-body {
-      height: 250px;
       display: flex;
       flex-direction: row;
       justify-content: space-around;
@@ -85,6 +94,20 @@
           transform: scaleX(-1);
         }
       }
+    }
+  }
+}
+
+@media (max-width: $media-breakpoint-size) {
+  .personalInfo {
+    .aboutBody {
+      align-items: center;
+      flex-direction: column-reverse;
+    }
+  }
+  .education {
+    .aboutBody {
+      flex-direction: column;
     }
   }
 }
