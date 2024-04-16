@@ -5,15 +5,18 @@
   margin: 1rem;
   padding: 1rem;
   min-height: calc(100vh - 8rem);
+  display: flex;
+  flex-direction: column;
 
   > * {
     display: flex;
-    flex-direction: row;
   }
 
   .cardTracker {
+    border: 2px solid $bg-navbar-primary;
+    padding: 1rem;
     .leftSide {
-      width: 40%;
+      min-width: 50%;
       align-items: center;
       h1,
       h2 {
@@ -27,6 +30,7 @@
       ul {
         display: flex;
         flex-wrap: wrap;
+        justify-content: start;
         li {
           list-style-type: none;
           a {
@@ -41,12 +45,22 @@
     }
 
     .rightSide {
-      width: 60%;
       text-align: center;
       img {
         position: relative;
-        width: 100%;
+        max-width: 100%;
+        cursor: pointer;
       }
+    }
+  }
+}
+
+@media (max-width: $media-breakpoint-size) {
+  .cardTracker {
+    flex-direction: column;
+
+    .leftSide {
+      width: 100%;
     }
   }
 }
