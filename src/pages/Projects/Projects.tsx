@@ -27,10 +27,10 @@ export function Projects(): JSX.Element {
                     <h1>
                         Card Tracker
                     </h1>
-                    <h2>
-                        <IconContainer imgSrc={link} link="https://card-tracker-seven.vercel.app/" />
-                        <IconContainer imgSrc={github} link="https://github.com/natnunez1996/CardTracker-Frontend" />
-                    </h2>
+                    <h3>
+                        Demo: <IconContainer imgSrc={link} link="https://card-tracker-seven.vercel.app/" />
+                        Github repo:<IconContainer imgSrc={github} link="https://github.com/natnunez1996/CardTracker-Frontend" />
+                    </h3>
                     <p>A MERN stack that is responsible for tracking credit cards, debit cards, and gift
                         cards.
                     </p>
